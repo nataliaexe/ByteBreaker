@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: bytebreaker
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api.server:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: BYTEBREAKER_CONFIG
+        value: config.json
+    healthCheckPath: /status
+    autoDeploy: true
+    plan: free

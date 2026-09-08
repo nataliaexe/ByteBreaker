@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}ByteBreaker - Advanced Pentest Framework{% endblock %}
+
+{% block content %}
+<div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+    <h1 style="font-size: 4em; margin-bottom: 20px; color: var(--accent);">BYTEBREAKER</h1>
+    <h2 style="font-size: 2em; margin-bottom: 40px; color: var(--text-secondary);">Advanced Pentest Framework</h2>
+    
+    <p style="max-width: 600px; margin-bottom: 40px; font-size: 1.2em;">
+        5 módulos integrados para segurança ofensiva e defensiva
+    </p>
+    
+    <div style="display: flex; gap: 20px; margin-bottom: 60px;">
+        <a href="/dashboard" class="btn">Acessar Dashboard</a>
+        <a href="/scan" class="btn btn-outline">Iniciar Scan</a>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; max-width: 800px;">
+        <div class="card">
+            <h3>ReconX</h3>
+            <p>Reconhecimento</p>
+        </div>
+        <div class="card">
+            <h3>VulnScan</h3>
+            <p>Scanner</p>
+        </div>
+        <div class="card">
+            <h3>ExploitLab</h3>
+            <p>Exploração</p>
+        </div>
+        <div class="card">
+            <h3>HashCrack</h3>
+            <p>Cracking</p>
+        </div>
+        <div class="card">
+            <h3>ForensicKit</h3>
+            <p>Forense</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

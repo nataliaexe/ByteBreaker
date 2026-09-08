@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ByteBreaker{% endblock %}</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a1a;
+            --bg-secondary: #1a1a2e;
+            --bg-card: #16213e;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --accent: #00ff88;
+            --accent-hover: #00cc6a;
+            --danger: #ff4444;
+            --warning: #ff8800;
+            --info: #4488ff;
+            --success: #44ff44;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-bottom: 2px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            border-color: var(--accent);
+            background: var(--bg-card);
+        }
+        
+        .nav-link.active {
+            border-color: var(--accent);
+            background: var(--bg-card);
+        }
+        
+        .card {
+            background: var(--bg-card);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px 0;
+            transition: all 0.3s;
+        }
+        
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 255, 136, 0.1);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--accent);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+        
+        .severity-critical {
+            color: var(--danger);
+            border-left: 4px solid var(--danger);
+        }
+        
+        .severity-high {
+            color: var(--warning);
+            border-left: 4px solid var(--warning);
+        }
+        
+        .severity-medium {
+            color: var(--info);
+            border-left: 4px solid var(--info);
+        }
+        
+        .severity-low {
+            color: var(--success);
+            border-left: 4px solid var(--success);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--bg-secondary);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="nav-link {% if active_page == 'home' %}active{% endif %}">BYTEBREAKER</a>
+            <div class="nav-links">
+                <a href="/dashboard" class="nav-link {% if active_page == 'dashboard' %}active{% endif %}">Dashboard</a>
+                <a href="/modules" class="nav-link {% if active_page == 'modules' %}active{% endif %}">Módulos</a>
+                <a href="/scan" class="nav-link {% if active_page == 'scan' %}active{% endif %}">Scan</a>
+                <a href="/reports" class="nav-link {% if active_page == 'reports' %}active{% endif %}">Relatórios</a>
+                <a href="/lab" class="nav-link {% if active_page == 'lab' %}active{% endif %}">Laboratório</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer class="footer">
+        <p>ByteBreaker Framework - Para uso educacional e autorizado apenas</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Laboratório - ByteBreaker{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Laboratório de Testes</h1>
+    
+    <div class="grid" style="margin-top: 20px;">
+        <div class="card">
+            <h3>Servidor Vulnerável</h3>
+            <p>Status: <span style="color: var(--success);">Rodando</span></p>
+            <p>URL: http://127.0.0.1:8080</p>
+            <a href="#" class="btn">Testar</a>
+        </div>
+        
+        <div class="card">
+            <h3>Wordlists</h3>
+            <p>Disponíveis: 3</p>
+            <ul>
+                <li>custom_wordlist.txt (12 senhas)</li>
+                <li>pattern_wordlist.txt (43 senhas)</li>
+                <li>default_wordlist.txt (25 senhas)</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Testes Rápidos</h3>
+            <a href="#" class="btn">Testar XSS</a>
+            <a href="#" class="btn">Testar SQLi</a>
+            <a href="#" class="btn">Testar Path Traversal</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

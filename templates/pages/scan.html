@@ -1,0 +1,53 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Scan - ByteBreaker{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Novo Scan</h1>
+    
+    <div class="card">
+        <h3>Configuração do Scan</h3>
+        <form>
+            <div style="margin: 20px 0;">
+                <label>Target:</label>
+                <input type="text" placeholder="example.com ou 192.168.1.1" 
+                       style="width: 100%; padding: 10px; background: var(--bg-primary); 
+                              border: 1px solid #333; color: var(--text-primary);">
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <label>Tipo de Scan:</label>
+                <select style="width: 100%; padding: 10px; background: var(--bg-primary); 
+                               border: 1px solid #333; color: var(--text-primary);">
+                    <option value="full">Full Scan</option>
+                    <option value="quick">Quick Scan</option>
+                    <option value="web">Web Scan</option>
+                    <option value="network">Network Scan</option>
+                </select>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <label>
+                    <input type="checkbox"> Port Scanning
+                </label>
+                <label>
+                    <input type="checkbox"> SSL Analysis
+                </label>
+                <label>
+                    <input type="checkbox"> Vulnerability Detection
+                </label>
+            </div>
+            
+            <button type="submit" class="btn">Iniciar Scan</button>
+        </form>
+    </div>
+    
+    <div class="card" style="margin-top: 20px;">
+        <h3>Resultados em Tempo Real</h3>
+        <div id="results" style="margin-top: 20px;">
+            <!-- Results will appear here -->
+        </div>
+    </div>
+</div>
+{% endblock %}

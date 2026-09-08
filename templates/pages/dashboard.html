@@ -1,0 +1,83 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Dashboard - ByteBreaker{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Dashboard</h1>
+    
+    <!-- Stats Cards -->
+    <div class="grid" style="margin-top: 20px;">
+        <div class="card">
+            <h3>Módulos Ativos</h3>
+            <p style="font-size: 2em; color: var(--accent);">5/5</p>
+            <p>Todos operacionais</p>
+        </div>
+        <div class="card">
+            <h3>Scans Completados</h3>
+            <p style="font-size: 2em; color: var(--info);">12</p>
+            <p>Último há 5 min</p>
+        </div>
+        <div class="card">
+            <h3>Vulnerabilidades</h3>
+            <p style="font-size: 2em; color: var(--danger);">10</p>
+            <p>2 críticas, 3 altas</p>
+        </div>
+        <div class="card">
+            <h3>Ameaças Ativas</h3>
+            <p style="font-size: 2em; color: var(--warning);">3</p>
+            <p>Monitorando...</p>
+        </div>
+    </div>
+    
+    <!-- Charts -->
+    <div class="grid" style="margin-top: 30px;">
+        <div class="card">
+            <h3>Vulnerabilidades por Severidade</h3>
+            <div style="margin-top: 20px;">
+                <div style="display: flex; align-items: center; margin: 10px 0;">
+                    <div style="width: 100px;">Críticas:</div>
+                    <div style="flex: 1; background: #333; height: 20px; border-radius: 10px;">
+                        <div style="width: 20%; background: var(--danger); height: 100%; border-radius: 10px;"></div>
+                    </div>
+                    <div style="width: 50px; text-align: right;">2</div>
+                </div>
+                <div style="display: flex; align-items: center; margin: 10px 0;">
+                    <div style="width: 100px;">Altas:</div>
+                    <div style="flex: 1; background: #333; height: 20px; border-radius: 10px;">
+                        <div style="width: 30%; background: var(--warning); height: 100%; border-radius: 10px;"></div>
+                    </div>
+                    <div style="width: 50px; text-align: right;">3</div>
+                </div>
+                <div style="display: flex; align-items: center; margin: 10px 0;">
+                    <div style="width: 100px;">Médias:</div>
+                    <div style="flex: 1; background: #333; height: 20px; border-radius: 10px;">
+                        <div style="width: 50%; background: var(--info); height: 100%; border-radius: 10px;"></div>
+                    </div>
+                    <div style="width: 50px; text-align: right;">5</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3>Atividade Recente</h3>
+            <div style="margin-top: 20px;">
+                <p>• [19:02] Scan web completado - 10 vulnerabilidades</p>
+                <p>• [18:58] Hash cracking - Senha encontrada</p>
+                <p>• [18:45] Análise forense - Completa</p>
+                <p>• [18:35] Reconhecimento - 2 portas abertas</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quick Actions -->
+    <div class="card" style="margin-top: 30px;">
+        <h3>Ações Rápidas</h3>
+        <div style="display: flex; gap: 10px; margin-top: 15px;">
+            <a href="/scan" class="btn">Novo Scan</a>
+            <a href="/modules" class="btn btn-outline">Ver Módulos</a>
+            <a href="/reports" class="btn btn-outline">Relatórios</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

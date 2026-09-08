@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  bytebreaker:
+    build: .
+    container_name: bytebreaker
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./config.json:/app/config.json
+    environment:
+      - BYTEBREAKER_CONFIG=/app/config.json
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    networks:
+      - bytebreaker-net
+
+  bytebreaker-api:
+    build: .
+    container_name: bytebreaker-api
+    command: python -m uvicorn api.server:app --host 0.0.0.0 --port 8000
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    networks:
+      - bytebreaker-net
+
+networks:
+  bytebreaker-net:
+    driver: bridge

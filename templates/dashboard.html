@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ByteBreaker Dashboard</title>
+    <style>
+        body { font-family: Arial; margin: 20px; background: #1a1a2e; color: #eee; }
+        .card { background: #16213e; padding: 20px; margin: 10px 0; border-radius: 8px; }
+        .critical { color: #ff4444; }
+        .high { color: #ff8800; }
+        .medium { color: #ffcc00; }
+        .low { color: #44ff44; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #333; }
+        th { background: #0f3460; }
+    </style>
+</head>
+<body>
+    <h1>ByteBreaker Dashboard</h1>
+    <p>Last updated: {{ timestamp }}</p>
+    
+    <div class="card">
+        <h2>Scan Results</h2>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Vulnerabilities</th>
+                <th>Status</th>
+            </tr>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.get('generated_at', 'N/A') }}</td>
+                <td>
+                    {% if result.get('results', {}).get('scan', {}).get('data', {}).get('total_found') %}
+                        {{ result['results']['scan']['data']['total_found'] }}
+                    {% else %}
+                        0
+                    {% endif %}
+                </td>
+                <td>Completed</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

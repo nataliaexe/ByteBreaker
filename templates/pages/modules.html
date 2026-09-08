@@ -1,0 +1,68 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Módulos - ByteBreaker{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Módulos</h1>
+    
+    <div class="grid" style="margin-top: 20px;">
+        <div class="card">
+            <h2>ReconX</h2>
+            <p>Reconhecimento avançado</p>
+            <ul>
+                <li>Port scanning</li>
+                <li>DNS enumeration</li>
+                <li>WHOIS lookup</li>
+                <li>SSL analysis</li>
+            </ul>
+            <a href="#" class="btn">Executar</a>
+        </div>
+        
+        <div class="card">
+            <h2>VulnScan</h2>
+            <p>Scanner de vulnerabilidades</p>
+            <ul>
+                <li>SQL Injection</li>
+                <li>XSS detection</li>
+                <li>Security headers</li>
+                <li>File discovery</li>
+            </ul>
+            <a href="#" class="btn">Executar</a>
+        </div>
+        
+        <div class="card">
+            <h2>ExploitLab</h2>
+            <p>Exploração controlada</p>
+            <ul>
+                <li>Command injection</li>
+                <li>Path traversal</li>
+                <li>File upload</li>
+            </ul>
+            <a href="#" class="btn">Executar</a>
+        </div>
+        
+        <div class="card">
+            <h2>HashCrack</h2>
+            <p>Quebra de hashes</p>
+            <ul>
+                <li>MD5, SHA1, SHA256</li>
+                <li>Wordlist support</li>
+                <li>Brute force</li>
+            </ul>
+            <a href="#" class="btn">Executar</a>
+        </div>
+        
+        <div class="card">
+            <h2>ForensicKit</h2>
+            <p>Análise forense</p>
+            <ul>
+                <li>Hash calculation</li>
+                <li>Metadata extraction</li>
+                <li>String analysis</li>
+            </ul>
+            <a href="#" class="btn">Executar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
