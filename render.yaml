@@ -8,5 +8,5 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.0
     healthCheckPath: /health
-    autoDeploy: false
+    autoDeploy: true
     plan: free

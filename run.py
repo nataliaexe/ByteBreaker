@@ -1,22 +1,21 @@
 """
-Entry point for Render
+Entry point for Render - Full Server with Dashboard
 """
 import os
+import re
 import uvicorn
 
 if __name__ == "__main__":
-    # Try to get port, fallback to 10000
     port_str = os.environ.get("PORT", "10000")
-    
-    # Clean port string - extract only digits
-    import re
     match = re.search(r'\d+', port_str)
     port = int(match.group()) if match else 10000
     
     print(f"Starting ByteBreaker on port {port}")
+    print(f"Dashboard: /")
+    print(f"API Docs: /api/docs")
     
     uvicorn.run(
-        "api.server:app",
+        "api.full_server:app",
         host="0.0.0.0",
         port=port,
         reload=False,
