@@ -3,12 +3,10 @@ services:
     name: bytebreaker
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: ./start.sh
+    startCommand: python -m uvicorn api.server:app --host 0.0.0.0 --port 10000
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
-      - key: BYTEBREAKER_CONFIG
-        value: config.json
     healthCheckPath: /health
-    autoDeploy: true
+    autoDeploy: false
     plan: free
