@@ -501,9 +501,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ##  Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
-
-Project Link: [https://github.com/yourusername/bytebreaker](https://github.com/yourusername/bytebreaker)
+Email: .[nataliavargas.exe@gmail.com](nataliavargas.exe@gmail.com)
+Project Link: [https://github.com/nataliaexe/bytebreaker](https://github.com/nataliaexe/bytebreaker)
 
 ---
 
